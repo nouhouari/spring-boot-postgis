@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    postgis:
+        image: postgis/postgis
+        environment:
+            POSTGRES_PASSWORD: postgis
+            POSTGRES_DB: postgis
+            POSTGRES_USER: postgis
+        ports:
+            - 5435:5432    

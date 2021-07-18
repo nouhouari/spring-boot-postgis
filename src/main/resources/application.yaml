@@ -1,0 +1,26 @@
+server:
+  port: 8980
+  
+spring:
+  # Database configuration
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5435}/${DB_NAME:postgis}
+    username: ${DB_USER:postgis}
+    password: ${DB_PASSWORD:postgis}
+  # JPA configuration  
+  jpa:
+    hibernate:
+      ddl-auto: update
+      # Avoid issue with JPA case insensitive
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect   
+    show-sql: true
+    database: postgresql
+    # PotGIS configuration
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
