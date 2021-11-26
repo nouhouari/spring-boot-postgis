@@ -32,4 +32,4 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       #Run Tests
       - name: Build the project
-        run: mvn -B install
+        run: mvn -B -DskipTests install
