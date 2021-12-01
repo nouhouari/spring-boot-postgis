@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     services:
       mysql:
-        image: mysql/mysql-server:5.7
+        image: postgis/postgis
         env:
-          MYSQL_DATABASE: test_database
-          MYSQL_HOST: 127.0.0.1
-          MYSQL_USER: admin
-          MYSQL_PASSWORD: rootpass
-          MYSQL_ROOT_PASSWORD: rootpass
+            POSTGRES_PASSWORD: postgis
+            POSTGRES_DB: postgis
+            POSTGRES_USER: postgis
+        ports: 
+        - 5432
     #Job's steps
     steps:
      # Checkout code
@@ -34,7 +34,7 @@ jobs:
          cache: 'maven'
      # Build Spring boot
      - name: Build the project
-       run: mvn -B -DskipTests install
+       run: mvn -B install
      # Login to Docker registry  
      - name: Docker Login
        uses: docker/login-action@v1.10.0
