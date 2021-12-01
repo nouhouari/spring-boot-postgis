@@ -15,24 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     #Job's steps
     steps:
-      #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
-      - uses: actions/checkout@v1
-      #Set up JDK 11
-      - name: Set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: '11'
-      #Run Tests
-      - name: Build the project
-        run: mvn -B -DskipTests install
-      # Build Docker image  
-      - name: Build Docker
-        run: mvn jib:dockerBuild
-      #Set up Maven cache
-      - name: Cache Maven packages
-        #This action allows caching dependencies and build outputs to improve workflow execution time.
-        uses: actions/cache@v1
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+     # Checkout code
+     - uses: actions/checkout@v2
+     
+     # Setup Java
+     - uses: actions/setup-java@v2
+       with:
+         distribution: 'adopt' # See 'Supported distributions' for available options
+         java-version: '17'
+         
+     # Build
+     - name: Build the project
+       run: mvn -B -DskipTests install
+       
+     # Build Docker image  
+     - name: Build Docker
+       run: mvn jib:dockerBuild
