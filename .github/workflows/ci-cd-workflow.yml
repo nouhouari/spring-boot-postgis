@@ -13,6 +13,15 @@ jobs:
     name: Build the application
     #Run on Ubuntu using the latest version
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql/mysql-server:5.7
+        env:
+          MYSQL_DATABASE: test_database
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_USER: admin
+          MYSQL_PASSWORD: rootpass
+          MYSQL_ROOT_PASSWORD: rootpass
     #Job's steps
     steps:
      # Checkout code
