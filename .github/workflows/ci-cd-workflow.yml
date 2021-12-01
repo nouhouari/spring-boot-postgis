@@ -23,9 +23,15 @@ jobs:
          distribution: 'adopt' # See 'Supported distributions' for available options
          java-version: '11'
          cache: 'maven'
+         server-id: ghcr.io
+         server-username: DOCKER_USERNAME
+         server-password: DOCKER_PASSWORD
      # Build Spring boot
      - name: Build the project
        run: mvn -B -DskipTests install
      # Build Docker image  
      - name: Build Docker
-       run: mvn jib:dockerBuild
+       run: mvn jib:build
+       env:
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
