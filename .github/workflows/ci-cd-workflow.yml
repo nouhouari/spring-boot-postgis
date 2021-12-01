@@ -1,5 +1,5 @@
 #Workflow name
-name: CI/CD Pipeline
+name: Build Spring Boot application with GitHub Actions
 on:
   #Manually trigger workflow runs
   workflow_dispatch:
@@ -8,27 +8,24 @@ on:
     branches:
       - main
 jobs:
-  #Test's job
-  tests:
-    name: Unit tests
+  # Build's job
+  build:
+    name: Build the application
     #Run on Ubuntu using the latest version
     runs-on: ubuntu-latest
     #Job's steps
     steps:
      # Checkout code
      - uses: actions/checkout@v2
-     
      # Setup Java
      - uses: actions/setup-java@v2
        with:
          distribution: 'adopt' # See 'Supported distributions' for available options
          java-version: '11'
          cache: 'maven'
-         
-     # Build
+     # Build Spring boot
      - name: Build the project
        run: mvn -B -DskipTests install
-       
      # Build Docker image  
      - name: Build Docker
        run: mvn jib:dockerBuild
