@@ -21,7 +21,7 @@ jobs:
             POSTGRES_DB: postgis
             POSTGRES_USER: postgis
         ports: 
-        - 5432
+        - 5432:5432
     #Job's steps
     steps:
      # Checkout code
@@ -34,7 +34,7 @@ jobs:
          cache: 'maven'
      # Build Spring boot
      - name: Build the project
-       run: mvn -DDB_HOST=postgis -DDB_PORT=5432 -B install
+       run: mvn -DDB_PORT=5432 -B install
      # Login to Docker registry  
      - name: Docker Login
        uses: docker/login-action@v1.10.0
