@@ -24,8 +24,8 @@ jobs:
          java-version: '11'
          cache: 'maven'
          server-id: ghcr.io
-         server-username: DOCKER_USERNAME
-         server-password: DOCKER_PASSWORD
+         server-username: ${{secrets.DOCKER_USERNAME}}
+         server-password: ${{secrets.DOCKER_PASSWORD}}
      # Build Spring boot
      - name: Build the project
        run: mvn -B -DskipTests install
