@@ -33,3 +33,6 @@ jobs:
       #Run Tests
       - name: Build the project
         run: mvn -B -DskipTests install
+      # Build Docker image  
+      - name: Build Docker
+        run: mvn -Dskipjib:dockerBuild
