@@ -23,6 +23,7 @@ jobs:
        with:
          distribution: 'adopt' # See 'Supported distributions' for available options
          java-version: '11'
+         cache: 'maven'
          
      # Build
      - name: Build the project
