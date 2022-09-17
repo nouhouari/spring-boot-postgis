@@ -36,3 +36,10 @@ Open your browser at <http://localhost:8980/city/48.232509500000106/-101.2962731
 
 This will return all the cities within the distance around the specified location.
 
+
+### Access the database
+
+```
+psql -h localhost -p 5435 -d postgis -U postgis
+```
+
