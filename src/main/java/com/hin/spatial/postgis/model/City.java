@@ -22,6 +22,6 @@ public class City {
 	@Column(name="`ELEV_IN_FT`")
 	private long altitude;
 	
-	@Column(columnDefinition = "geography")
+	@Column(columnDefinition = "geometry(Point,4326)")
 	private Point geom;
 }
