@@ -7,7 +7,7 @@ This project demonstrate how you can use PostGIS and Spring Boot to manage spati
 docker-compose up -d
 ```
 
-Load the Data
+### Load the Data
 
 ```
 ogr2ogr -f "PostgreSQL" PG:"dbname=postgis user=postgis host=localhost port=5435 password=postgis" "src/main/resources/us_cities.geojson" -sql "select cast(ID as INTEGER), ELEV_IN_FT, POP_2010 from us_cities" -nln us_cities
