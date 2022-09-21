@@ -17,6 +17,7 @@
 	<description>Demo project for Spring Boot integrated with PostGIS</description>
 	
 	<properties>
+                <maven.compiler.release>17</maven.compiler.release>
 		<java.version>17</java.version>
 		<jackson.jts.version>2.4</jackson.jts.version>
 		<jts.version>1.18.2</jts.version>
