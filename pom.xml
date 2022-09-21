@@ -90,6 +90,9 @@
               <artifactId>jib-maven-plugin</artifactId>
               <version>3.1.4</version>
               <configuration>
+               <from>
+                 <image>gcr.io/distroless/java:17</image>
+               </from> <!-- or ":8" -->
                <to>
                 <image>ghcr.io/nouhouari/spring-boot-postgis</image>
                </to>
