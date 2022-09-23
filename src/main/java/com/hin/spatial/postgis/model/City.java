@@ -1,8 +1,8 @@
 package com.hin.spatial.postgis.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import com.vividsolutions.jts.geom.Point;
 
@@ -24,5 +24,4 @@ public class City {
 	
 	@Column(columnDefinition = "geometry(Point,4326)")
 	private Point geom;
-
 }

@@ -15,8 +15,7 @@ spring:
       # Avoid issue with JPA case insensitive
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    # This should no longer be needed with Hibernate 6
-    database-platform: org.hibernate.spatial.dialect.postgis.PostgisPG10Dialect
+    database-platform: org.hibernate.spatial.dialect.postgis.PostgisDialect   
     show-sql: true
     database: postgresql
     # PotGIS configuration
