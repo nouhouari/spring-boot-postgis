@@ -1,8 +1,8 @@
-version: '3'
+version: '3.7'
 
 services:
     postgis:
-        image: postgis/postgis
+        image: postgis/postgis:14-3.3
         environment:
             POSTGRES_PASSWORD: postgis
             POSTGRES_DB: postgis

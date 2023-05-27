@@ -2,12 +2,12 @@ package com.hin.spatial.postgis.repo;
 
 import java.util.List;
 
+import org.locationtech.jts.geom.Point;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.hin.spatial.postgis.model.City;
-import com.vividsolutions.jts.geom.Point;
 
 @Repository
 public interface CityRepository extends JpaRepository<City, Long>{
