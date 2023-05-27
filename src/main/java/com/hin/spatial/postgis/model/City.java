@@ -3,13 +3,17 @@ package com.hin.spatial.postgis.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.locationtech.jts.geom.Point;
 
-import com.vividsolutions.jts.geom.Point;
-
-import lombok.Data;
-
-@Data
 @Entity(name = "us_cities")
+@Getter
+@Setter
+@EqualsAndHashCode(exclude = "id")
+@ToString
 public class City {
 
 	@Id
@@ -21,7 +25,7 @@ public class City {
 	
 	@Column(name="`ELEV_IN_FT`")
 	private long altitude;
-	
+
 	@Column(columnDefinition = "geometry(Point,4326)")
 	private Point geom;
 
