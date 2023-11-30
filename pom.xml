@@ -91,7 +91,7 @@
               <version>3.4.0</version>
               <configuration>
                <from>
-                 <image>gcr.io/distroless/java:17</image>
+                 <image>gcr.io/distroless/java17-debian11</image>
                </from> <!-- or ":8" -->
                <to>
                 <image>ghcr.io/nouhouari/spring-boot-postgis</image>
