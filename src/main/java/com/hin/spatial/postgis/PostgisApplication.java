@@ -1,10 +1,9 @@
 package com.hin.spatial.postgis;
 
+import org.n52.jackson.datatype.jts.JtsModule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import com.bedatadriven.jackson.datatype.jts.JtsModule;
 
 @SpringBootApplication
 public class PostgisApplication {
@@ -14,9 +13,7 @@ public class PostgisApplication {
 	}
 
 	@Bean
-	public JtsModule jtsModule() {
-		// This module will provide a Serializer for geometries
+	public JtsModule jtsModule(){
 		return new JtsModule();
 	}
-
 }
